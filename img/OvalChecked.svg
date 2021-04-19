@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>OvalChecked</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="OvalChecked">
+            <circle id="Oval" fill="#1E94C1" fill-rule="nonzero" cx="9" cy="9" r="4"></circle>
+            <circle id="Oval" stroke="#37648F" stroke-width="3" cx="9" cy="9" r="7"></circle>
+        </g>
+    </g>
+</svg>

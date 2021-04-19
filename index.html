@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aflatest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form class="plan">
+        <div class="radio-license">
+            <div class="radio-license__item" id="item1">
+                <input type="radio" id="license-plan1" name="license-plan" value="1" onchange = "numberLicense()">
+                <label for="license-plan1">License plan#1 <div class="radio-license__price">$13 per license</div></label>
+                
+                
+            </div>
+            <div class="radio-license__item" id="item2">
+                <input type="radio" id="license-plan2" name="license-plan" value="2" onchange = "numberLicense()">
+                <label for="license-plan2">License plan#2 <div class="radio-license__price">$22 per license</div></label>
+                
+                
+            </div>
+            <div class="radio-license__item" id="item3">
+                <input type="radio" id="license-plan3" name="license-plan" value="3" onchange = "numberLicense()">
+                <label for="license-plan3">License plan#3 <div class="radio-license__price">$34 per license</div></label>
+                
+                
+            </div>
+        </div>
+        <div class="select-num">
+            <label for="num">Number of licenses:</label>
+            <select name="num" id="num" onchange = "numberLicense()">
+                <option value="0" selected disabled>нет</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="order-license">
+            <div class="order-license__total-price">
+                total: <div class="order-license__price unactive">$ <div id="total"></div><span>us</span></div>
+            </div>
+            <input type="submit" value="buy now">
+            <div class="order-license__name-selected-plan">
+                Selected plan: #<div id="valPlan"></div>
+            </div>
+        </div>
+    </form>
+    <script >
+       
+        function numberLicense() {
+            var price;
+            var licNum = parseInt($('#num').val());
+            var value = $('input[type="radio"]:checked').val();
+            $(".order-license__price").removeClass("unactive");
+            if (value == 1) {
+                price = 13;
+                $("#item1").addClass("active");
+                $("#item2").removeClass("active");
+                $("#item3").removeClass("active");
+            } else if (value == 2) {
+                price = 22;
+                $("#item2").addClass("active");
+                $("#item1").removeClass("active");
+                $("#item3").removeClass("active");
+            } else {
+                price = 34;
+                $("#item3").addClass("active");
+                $("#item2").removeClass("active");
+                $("#item1").removeClass("active");
+            }
+
+            if (licNum >= 1) {
+                licNum = licNum;
+            } else {
+                licNum = 0;
+            }
+
+            document.getElementById("total").innerHTML = licNum*price;
+            document.getElementById("valPlan").innerHTML = value;
+        };
+    </script>
+</body>
+</html>
